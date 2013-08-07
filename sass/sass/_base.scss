@@ -1,0 +1,88 @@
+// CONTENTS - _BASE.SCSS
+// -----------------------------------------
+// 1. IMPORTS
+// 2. UTILITIES
+// 3. VARIABLES
+//  3.1. COLORS
+//  3.2. TYPE
+//  3.3. GRID
+
+
+//==========================================================================
+//  1. IMPORTS
+//==========================================================================
+
+@import "compass/typography";
+@import "susy";
+
+//==========================================================================
+//  2. UTILITIES
+//==========================================================================
+
+
+// Px to Em Calculator -- http://foundation.zurb.com/docs/sass.html
+//--------------------------------------------------------------------------
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// Converts "px" to "em" using the ($)base-font-size
+@function convert-to-em($value)  {
+  $value: strip-unit($value) / strip-unit($base-font-size) * 1em;
+  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
+  @return $value;
+}
+
+// Working in ems is annoying. Think in pixels by using this handy function, emCalc(#)
+// Just enter the number, no need to mention "px"
+@function emCalc($values...) {
+  $max: length($values); // Get the total number of parameters passed
+
+  // If there is only 1 parameter, then return it as an integer.
+  // This is done because a list can't be multiplied or divided even if it contains a single value
+  @if $max == 1 { @return convert-to-em(nth($values, 1)); }
+
+  $emValues: (); // This will eventually store the converted $values in a list
+  @for $i from 1 through $max {
+    $emValues: append($emValues, convert-to-em(nth($values, $i)));
+  }
+  @return $emValues;
+}
+
+
+// Set Breakpoint Values
+//--------------------------------------------------------------------------
+@function getBreakpoint($colWidth, $gutterWidth, $colCount) {
+  @return ($colWidth * $colCount) + ($gutterWidth * $colCount);
+}
+
+
+//==========================================================================
+//  3. VARIABLES
+//==========================================================================
+
+// 3.1. COLORS
+//--------------------------------------------------------------------------
+
+
+// 3.2. TYPE
+//--------------------------------------------------------------------------
+$base-font-size: 16px;
+$base-line-height: 24px;
+
+// 3.3 GRID
+//--------------------------------------------------------------------------
+
+$total-columns: 12;
+$tablet-columns: 8;
+
+$column-width: 4em;
+$gutter-width: emCalc($base-line-height);
+$grid-padding: $gutter-width / 2;
+
+$show-grid-backgrounds  : true;
+
+//  Breakpoints
+$large-breakpoint: getBreakpoint($column-width, $gutter-width, $total-columns);
+$medium-breakpoint: getBreakpoint($column-width, $gutter-width, $tablet-columns);
+

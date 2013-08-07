@@ -1,0 +1,227 @@
+/* line 33, ../sass/_root.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 43, ../sass/_root.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 46, ../sass/_root.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 50, ../sass/_root.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 54, ../sass/_root.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 33, ../sass/_root.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 43, ../sass/_root.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 46, ../sass/_root.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 50, ../sass/_root.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 54, ../sass/_root.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 65, ../sass/_root.scss */
+html {
+  overflow-y: scroll;
+  background: #FFF;
+}
+
+/* line 71, ../sass/_root.scss */
+img, embed, object, video {
+  max-width: 100%;
+}
+
+/* line 72, ../sass/_root.scss */
+.ie6 img.full, .ie6 object.full, .ie6 embed, .ie6 video {
+  width: 100%;
+}
+
+/* line 80, ../sass/_root.scss */
+body {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.5em;
+  color: #333;
+}
+
+/* line 86, ../sass/_root.scss */
+h1 {
+  font-size: 2.375em;
+  line-height: 1.26316em;
+  margin-bottom: 0.31579em;
+}
+
+/* line 90, ../sass/_root.scss */
+h2 {
+  font-size: 2em;
+  line-height: 1.5em;
+  margin-bottom: 0.375em;
+}
+
+/* line 94, ../sass/_root.scss */
+h3, h1 small {
+  font-size: 1.5em;
+  line-height: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* line 98, ../sass/_root.scss */
+h4, h2 small {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  margin-bottom: 0.66667em;
+}
+
+/* line 102, ../sass/_root.scss */
+h5, h3 small, h4 small {
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+/* line 106, ../sass/_root.scss */
+h6 {
+  font-size: 0.75em;
+  line-height: 2em;
+  margin-bottom: 1em;
+}
+
+/* line 111, ../sass/_root.scss */
+p, ul, ol, dl, blockquote {
+  margin-bottom: 1.5em;
+  max-width: 30em;
+}
+
+/* line 116, ../sass/_root.scss */
+ul {
+  list-style-type: disc;
+  margin-left: 1.5em;
+}
+
+/* line 117, ../sass/_root.scss */
+ol {
+  list-style-type: decimal;
+  margin-left: 1.5em;
+}
+
+/* line 118, ../sass/_root.scss */
+nav ul, nav ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 120, ../sass/_root.scss */
+b, strong {
+  font-weight: bold;
+}
+
+/* line 121, ../sass/_root.scss */
+i, em {
+  font-style: italic;
+}
+
+/* line 122, ../sass/_root.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 3, ../sass/_layouts.scss */
+.container {
+  *zoom: 1;
+  max-width: 64.5em;
+  _width: 64.5em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 38, ../../../../Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 10, ../sass/_layouts.scss */
+.container {
+  max-width: 64.5em;
+  _width: 64.5em;
+}
+
+/* line 3, ../sass/_blocks.scss */
+#main-content {
+  width: 31.78295%;
+  float: left;
+  margin-right: 2.32558%;
+  display: inline;
+}

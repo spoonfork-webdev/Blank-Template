@@ -16,13 +16,11 @@
 	]]></description><!-- change the description as you like -->
 	
 	<files><!-- no need to change -->
-		<folder>css</folder>
-		<folder>font</folder>
 		<folder>html</folder>
 		<folder>images</folder>
 		<folder>js</folder>
-		<folder>less</folder>
 		<folder>sass</folder>
+		<folder>language</folder>
 		<filename>component.php</filename>
 		<filename>error.php</filename>
 		<filename>index.php</filename>
@@ -35,14 +33,24 @@
 	</files>
 	
 	<languages folder="language"><!-- no need to change -->
-		<language tag="de-DE">de-DE.tpl_frontend.ini</language>
 		<language tag="en-GB">en-GB.tpl_frontend.ini</language>
-		<language tag="ca-CA">ca-CA.tpl_frontend.ini</language>
-		<language tag="es-ES">es-ES.tpl_frontend.ini</language>
 	</languages>
 	
 	<positions><!-- define the positions for modules here -->
-		<position>debug</position>
+		<position>nav-position</position>
+		<position>content-header</position>
+		<position>sidebar-1</position>
+		<position>main-1</position>
+		<position>sidebar-2</position>
+		<position>main-2</position>
+		<position>sidebar-3</position>
+		<position>main-3</position>
+		<position>sidebar-4</position>
+		<position>content-footer</position>
+		<position>footer-1</position>
+		<position>footer-2</position>
+		<position>footer-3</position>
+		<position>footer-4</position>
 	</positions>
 	
 	<config><!-- no need to change -->
@@ -50,52 +58,31 @@
 
 			<fieldset name="basic">
 
+				<!-- LOGO -->
+				<field name="logo" type="media"
+					label="Logo" description="Upload an image to display in the header." />
+				
+				<!-- TITLE -->
+				<field name="title"  type="text" default=""
+					label="Title"
+					description="Enter the name of the site."
+					filter="string" />
+
+				<!-- TAGLINE -->
+				<field name="tagline"  type="text" default=""
+					label="Tagline"
+					description="Enter a tagline or site description to be diplayed in the header"
+					filter="string" />
+
+
+			</fieldset>
+			
+			<fieldset name="advanced">
+
 				<!-- MODERNIZR-->
 				<field name="modernizr" type="radio" default="0" 
 					label="TPL_FRONTEND_PARAMETER_MODERNIZR_LABEL" 
 					description="TPL_FRONTEND_PARAMETER_MODERNIZR_DESC">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-
-				<!-- CSS METHOD -->
-				<field name="cssmethod" type="radio" default="css" 
-					label="TPL_FRONTEND_PARAMETER_CSSMETHOD_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_CSSMETHOD_DESC">
-					<option value="css">CSS (default)</option>
-					<option value="min">CSS (minified)</option>
-					<option value="less">LESS</option>
-					<option value="sass">SASS</option>
-				</field>
-
-				<!-- LESS.JS -->
-				<field name="lessjs" type="radio" default="0" 
-					label="TPL_FRONTEND_PARAMETER_LESSJS_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_LESSJS_DESC">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-
-				<!-- FOUNDATION -->
-				<field name="foundation" type="radio" default="0" 
-					label="TPL_FRONTEND_PARAMETER_FOUNDATION_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_FOUNDATION_DESC">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-
-				<!-- BOOTSTRAP -->
-				<field name="bootstrap" type="radio" default="0" 
-					label="TPL_FRONTEND_PARAMETER_BOOTSTRAP_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_BOOTSTRAP_DESC">
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-
-				<!-- FONT-AWESOME -->
-				<field name="fontawesome" type="radio" default="0" 
-					label="TPL_FRONTEND_PARAMETER_FONTAWESOME_LABEL" 
-					description="TPL_FRONTEND_PARAMETER_FONTAWESOME_DESC">
 					<option value="0">JNO</option>
 					<option value="1">JYES</option>
 				</field>
@@ -122,9 +109,6 @@
                 	description="TPL_FRONTEND_PARAMETER_GOOGLEFONT_DESC">
 				</field>
 
-			</fieldset>
-			
-			<fieldset name="advanced">
 
 				<!-- Disable JavaScript -->	
 				<field name="disablejs" type="radio" default="0" 

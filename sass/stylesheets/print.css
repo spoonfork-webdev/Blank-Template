@@ -1,0 +1,24 @@
+/* line 1, ../sass/print.scss */
+body {
+  font-family: Georgia, serif;
+  background: none;
+  color: black;
+}
+
+/* line 6, ../sass/print.scss */
+.container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: none;
+}
+
+/* line 11, ../sass/print.scss */
+.site-header, .site-nav, .site-footer {
+  display: none;
+}
+
+/* line 14, ../sass/print.scss */
+.content a:after {
+  content: " [" attr(href) "] ";
+}

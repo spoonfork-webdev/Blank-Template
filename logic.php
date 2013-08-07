@@ -10,16 +10,15 @@ $active = $app->getMenu()->getActive();
 $pageclass = $params->get('pageclass_sfx');
 $tpath = $this->baseurl.'/templates/'.$this->template;
 
-// parameter
+// parameters
 $modernizr = $this->params->get('modernizr');
-$cssmethod = $this->params->get('cssmethod');
-$lessjs = $this->params->get('lessjs');
-$foundation = $this->params->get('foundation');
-$bootstrap = $this->params->get('bootstrap');
-$fontawesome = $this->params->get('fontawesome');
 $jquery = $this->params->get('jquery');
 $pie = $this->params->get('pie');
 $googlefont = $this->params->get('googlefont');
+
+$logo = $this->params->get('logo');
+$tagline = $this->params->get('tagline');
+$title = $this->params->get('title');
 
 // advanced parameter
 if ($app->isSite()) {
@@ -74,47 +73,12 @@ $doc->setMetadata('x-ua-compatible', 'IE=edge,chrome=1');
 
 // add javascripts
 if ($modernizr==1) $doc->addScript($tpath.'/js/modernizr-2.6.2.js');
-if ($foundation==1) : 
-  $doc->addScript($tpath.'/js/jquery-1.10.2.min.js');
-  $doc->addScript($tpath.'/js/foundation.min.js');
-endif;
-if ($bootstrap==1 && JVERSION>='3') :
-  JHtml::_('bootstrap.framework');
-elseif ($bootstrap==1) :
-  $doc->addScript($tpath.'/js/jquery-1.10.2.min.js');
-  $doc->addScript($tpath.'/js/jquery-noconflict.js');
-  $doc->addScript($tpath.'/js/bootstrap.min.js');
-endif;
 if ($jquery==1) $doc->addScript($tpath.'/js/jquery-1.10.2.min.js');
-
-// add stylesheets
-if ($cssmethod=='css') : 
-  if ($foundation==0 && $bootstrap==0) $doc->addStyleSheet($tpath.'/css/normalize.css');
-  if ($foundation==1) $doc->addStyleSheet($tpath.'/css/foundation.min.css');
-  if ($bootstrap==1) :
-    $doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
-    $doc->addStyleSheet($tpath.'/css/bootstrap-responsive.min.css');
-    if ($fontawesome==1) $doc->addStyleSheet($tpath.'/css/font-awesome.min.css');
-  endif;
-endif;
 
 // add google font
 if ($googlefont !='') $doc->addStyleSheet("https://fonts.googleapis.com/css?family=".$googlefont);
 
-// file ending
-if ($cssmethod=='min') : 
-  $ext = '.php'; 
-  $cssmethod = 'css';
-else :
-  $ext = '';
-endif;
-
 // add template sheet
-if ($lessjs==0) $doc->addStyleSheet($tpath.'/'.$cssmethod.'/template.css'.$ext.'?f='.$foundation.'&amp;b='.$bootstrap.'&amp;fa='.$fontawesome.'&amp;v=1');
-if ($lessjs==1 && $cssmethod=='less') :
-  $doc->addCustomTag('<link rel="stylesheet/less" type="text/css" href="'.$tpath.'/'.$cssmethod.'/template.less" />');
-  $doc->addCustomTag('<script src="'.$tpath.'/js/less-1.4.1.min.js" type="text/javascript"></script>');
-endif;
-
+$doc->addStyleSheet($tpath.'/sass/stylesheets/screen.css');
 
 ?>

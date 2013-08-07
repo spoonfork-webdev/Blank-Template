@@ -1,0 +1,16 @@
+body {
+  font-family: Georgia, serif;
+  background: none;
+  color: black;
+}
+.container {
+  width: 100%;
+  margin: 0; padding: 0;
+  background: none;
+}
+.site-header, .site-nav, .site-footer {
+  display: none;
+}
+.content a:after {
+  content: " [" attr(href) "] ";
+}

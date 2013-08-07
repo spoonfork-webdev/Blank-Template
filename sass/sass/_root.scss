@@ -1,0 +1,123 @@
+//==========================================================================
+//  ROOT -- https://github.com/designbyfront/The-Goldilocks-Approach/blob/master/css/global.css
+//==========================================================================
+
+@mixin root
+{
+  @include reset;
+  @include responsive-defaults;
+  @include type;
+}
+
+// 1. Reset
+//--------------------------------------------------------------------------
+
+// http://meyerweb.com/eric/tools/css/reset/ 
+// v2.0 | 20110126
+// License: none (public domain)
+
+@mixin reset
+{
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed, 
+  figure, figcaption, footer, header, hgroup, 
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  // HTML5 display-role reset for older browsers
+  article, aside, details, figcaption, figure, 
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+}
+
+// 2. Responsive Defaults
+//--------------------------------------------------------------------------
+
+@mixin responsive-defaults
+{
+  html { 
+    overflow-y: scroll;
+    background: #FFF;
+    }
+
+  // /ht Ethan Marcotte - http://front.ie/l8rJaA
+  img, embed, object, video { max-width: 100%; }
+  .ie6 img.full, .ie6 object.full, .ie6 embed, .ie6 video { width: 100%; }
+}
+
+// 3. TYPE
+//--------------------------------------------------------------------------
+
+@mixin type
+{
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    line-height: emCalc($base-line-height);
+    color: #333;
+  }
+
+  h1 {
+    @include adjust-font-size-to(38px);
+    @include trailer(0.5, 38px);
+  }
+  h2 {
+    @include adjust-font-size-to(32px);
+    @include trailer(0.5, 32px);
+  }
+  h3, h1 small {
+    @include adjust-font-size-to(24px);
+    @include trailer(0.5, 24px);
+  }
+  h4, h2 small {
+    @include adjust-font-size-to(18px);
+    @include trailer(0.5, 18px);
+  }
+  h5, h3 small, h4 small {
+    @include adjust-font-size-to(16px);
+    @include trailer(0.5, 16px);
+  }
+  h6 {
+    @include adjust-font-size-to(12px);
+    @include trailer(0.5, 12px);
+  }
+
+  p, ul, ol, dl, blockquote {
+    margin-bottom: emCalc($base-line-height); 
+    max-width: 30em; //Optimal width for long-form text
+  }
+      
+  ul { list-style-type: disc; margin-left: emCalc($base-line-height); }
+  ol { list-style-type: decimal; margin-left: emCalc($base-line-height); }
+  nav ul, nav ol { list-style: none; margin: 0; padding: 0;}
+
+  b, strong { font-weight: bold; }
+  i, em { font-style: italic; }
+  small { font-size: 80%; }
+}

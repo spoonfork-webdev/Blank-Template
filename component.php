@@ -8,10 +8,10 @@ $tpath = $this->baseurl.'/templates/'.$this->template;
 $this->setGenerator(null);
 
 // load sheets and scripts
-$doc->addStyleSheet($tpath.'/css/bootstrap.min.css');
-$doc->addStyleSheet($tpath.'/css/bootstrap-responsive.min.css');
-$doc->addStyleSheet($tpath.'/css/print.css?v=1'); 
-//$doc->addScript($tpath.'/js/modernizr-2.6.2.js');
+// add template sheet
+$doc->addStyleSheet($tpath.'/sass/stylesheets/print.css');
+
+$doc->addScript($tpath.'/js/modernizr-2.6.2.js');
 
 ?><!doctype html>
 <!--[if IEMobile]><html class="iemobile" lang="<?php echo $this->language; ?>"> <![endif]-->

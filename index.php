@@ -17,7 +17,7 @@ $display_content =  array( // Declare order for content module positions
    
 ?><!doctype html>
 <!--[if IEMobile]><html class="iemobile" lang="<?php echo $this->language; ?>"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8" lang="<?php echo $this->language; ?>"> <![endif]-->
+<!--[if lte IE 8]>    <html class="no-js lte-ie8" lang="<?php echo $this->language; ?>"> <![endif]-->
 <!--[if gt IE 8]><!-->  <html class="no-js" lang="<?php echo $this->language; ?>"> <!--<![endif]-->
 
 <head>
